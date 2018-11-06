@@ -36,10 +36,10 @@ from random import randint
 from socket import gethostname
 from collections import defaultdict
 
-from hfos.debugger import cli_register_event
-from hfos.misc import std_hash, std_uuid
-from hfos.component import ConfigurableComponent
-from hfos.logger import error, warn, hilight, debug, verbose
+from isomer.debugger import cli_register_event
+from isomer.misc import std_hash, std_uuid
+from isomer.component import ConfigurableComponent
+from isomer.logger import error, warn, hilight, debug, verbose
 
 from circuits import Timer, handler
 from circuits.core.events import Event

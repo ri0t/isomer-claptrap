@@ -6,15 +6,15 @@ import click
 from click_didyoumean import DYMGroup
 from warmongo import model_factory
 
-from hfos.logger import hfoslog, debug, error
-from hfos.misc import std_uuid
-from hfos.tool import _check_root
-from hfos.tool.misc import run_process
+from isomer.logger import isolog, debug, error
+from isomer.misc import std_uuid
+from isomer.tool import check_root
+from isomer.tool.misc import run_process
 
 
 def log(*args, **kwargs):
     kwargs.update({'emitter': 'XMPPSetup', 'frame_ref': 2})
-    hfoslog(*args, **kwargs)
+    isolog(*args, **kwargs)
 
 
 @click.group(cls=DYMGroup)
@@ -22,12 +22,12 @@ def log(*args, **kwargs):
 def xmpp(ctx):
     """Hello world"""
 
-    _check_root()
+    check_root()
 
-    from hfos import database
+    from isomer import database
     database.initialize(ctx.obj['dbhost'], ctx.obj['dbname'])
 
-    from hfos.schemata.component import ComponentConfigSchemaTemplate
+    from isomer.schemata.component import ComponentConfigSchemaTemplate
     factory = model_factory(ComponentConfigSchemaTemplate)
     bot_config = factory.find_one({'name': 'XMPPBOT'})
 
