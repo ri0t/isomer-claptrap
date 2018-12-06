@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 
-# HFOS - Hackerfleet Operating System
-# ===================================
+# Isomer Application Framework
+# ============================
 # Copyright (C) 2011-2018 Heiko 'riot' Weinen <riot@c-base.org> and others.
 #
 # This program is free software: you can redistribute it and/or modify
@@ -135,7 +135,7 @@ class IRCGate(ConfigurableComponent):
 
         self.channel = 'ircbot'
 
-        self.fireEvent(cli_register_event('test_irc_send', cli_test_irc_send), "hfosweb")
+        self.fireEvent(cli_register_event('test_irc_send', cli_test_irc_send), "isomer-web")
         self.log("Started")
 
         self.host = self.config.host
@@ -167,7 +167,7 @@ class IRCGate(ConfigurableComponent):
 
         self.fire(connect(self.host, self.port), 'ircbot')
 
-    @handler('cli_test_irc_send', channel='hfosweb')
+    @handler('cli_test_irc_send', channel='isomer-web')
     def cli_test_irc_send(self, *args):
         """Tests IRC message sending"""
 
@@ -303,7 +303,7 @@ class IRCGate(ConfigurableComponent):
             self.log('I was addressed! Source:', source, 'Message:', message)
             if "test_irc_send" in message:
                 self.log('Testing via irc')
-                self.fireEvent(cli_test_irc_send(), 'hfosweb')
+                self.fireEvent(cli_test_irc_send(), 'isomer-web')
 
         # Only log messages to the channel we're on
         if target[0] == "#":

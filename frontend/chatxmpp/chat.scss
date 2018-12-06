@@ -1,0 +1,109 @@
+/*!
+ * #!/usr/bin/env python
+ * # -*- coding: UTF-8 -*-
+ *
+ * __license__ = """
+ * Isomer Application Framework
+ * ============================
+ * Copyright (C) 2011- 2018 riot <riot@c-base.org> and others.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * """
+ */
+@import '../../../scss/colors';
+
+.chat {
+  width: 100%;
+  height: calc(100% - 20px);
+  padding: 0 20px 0 20px;
+  bottom: 0;
+}
+
+.chat-messages {
+  list-style-type: none;
+  padding: 0;
+}
+
+#chatheader {
+  border-bottom: 1px solid $color-gray-dark;
+}
+
+#chatdisplay {
+  overflow: auto;
+  position: absolute;
+  bottom: 50px;
+  top: 90px;
+  left: 0;
+  right: 0;
+  padding: 0;
+  margin: 10px;
+}
+
+.chatinput {
+  position: absolute;
+  width: 99%;
+  height: 40px;
+  bottom: 10px;
+}
+
+#chatsidebar ul {
+  list-style-type: none;
+  padding-left: 10px;
+}
+
+#chatsidebar .pull-right .fa {
+  color: $color-gray-light;
+  &:hover {
+    color: $color-gray-dark;
+  }
+}
+
+#chatsidebar {
+  padding: 0;
+  margin: 0;
+}
+
+#chatsidebar .slider.slider-horizontal {
+  width: 96% !important;
+}
+
+#chatsidebar .tab-content {
+  margin: 10px;
+}
+
+#btnchat {
+  position: relative;
+}
+
+#btnchat .badge {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
+.message-content {
+  display: inline-block;
+}
+
+.message-ago {
+  color: $color-gray-dark;
+}
+
+.message-timestamp {
+  color: $color-gray-light;
+}
+
+.profile-image {
+  vertical-align: top;
+}
