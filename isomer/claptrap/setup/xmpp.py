@@ -61,7 +61,7 @@ def add_system_user(ctx):
         bot_config.get('password')
     ]
 
-    result = run_process('.', add_user)
+    success, result = run_process('.', add_user)
     if b'conflict' in result:
         log('User already existing, updating password')
         update_password = [
@@ -71,7 +71,7 @@ def add_system_user(ctx):
             'localhost',
             bot_config.get('password')
         ]
-        result = run_process('.', update_password)
+        success, result = run_process('.', update_password)
         if result != b'':
             log('Something problematic happened:', result)
     log('Done')
@@ -86,5 +86,5 @@ def install(ctx):
         'ejabberd'
     ]
 
-    result = run_process('.', install_server)
+    success, result = run_process('.', install_server)
     log('Done')
